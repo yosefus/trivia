@@ -14,7 +14,7 @@ function App() {
 
   console.log(Ques, currQues, data);
 
-  useEffect(() => getQuest, [])
+  useEffect(() => { getQuest() }, [])
   useEffect(() => { Ques.length && !currQues.length && handleReLoad() }, [Ques, currQues])
 
   const getQuest = () => {
