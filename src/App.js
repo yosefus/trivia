@@ -12,6 +12,8 @@ function App() {
     [Ques, setQues] = useState([]),
     [currQues, setCurrQues] = useState([])
 
+  console.log(Ques, currQues);
+
   useEffect(() => getQuest, [])
   useEffect(() => { Ques.length && !currQues.length && handleReLoad() }, [Ques, currQues])
 
