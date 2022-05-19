@@ -12,15 +12,17 @@ function App() {
     [Ques, setQues] = useState([]),
     [currQues, setCurrQues] = useState([])
 
-  console.log(Ques, currQues);
+  console.log(Ques, currQues, data);
 
   useEffect(() => getQuest, [])
   useEffect(() => { Ques.length && !currQues.length && handleReLoad() }, [Ques, currQues])
 
   const getQuest = () => {
+    console.log("start to get");
     if (localStorage.questions)
       setQues(JSON.parse(localStorage.questions))
     else {
+      console.log("else");
       setQues(data)
       localStorage.questions = JSON.stringify(data)
     }
