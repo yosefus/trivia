@@ -124,6 +124,7 @@ input {
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 10;
 }
 
 .header button {
@@ -214,6 +215,24 @@ input {
 .entrence {
   -webkit-animation: bounce-in-top 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
   animation: bounce-in-top 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
+}
+
+.footer {
+  position: fixed !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  min-height: 10px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #000;
+}
+
+.footer:hover {
+  transform: scale(1) !important;
 }
 
 @-webkit-keyframes bounce-in-top {
