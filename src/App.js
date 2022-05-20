@@ -9,24 +9,17 @@ import { getRandom3 } from './functions/functions';
 
 function App() {
   const
-    [Ques, setQues] = useState([]),
+    initialState = localStorage.questions ? JSON.parse(localStorage.questions) : data,
+    [Ques, setQues] = useState(initialState),
     [currQues, setCurrQues] = useState([])
 
   console.log(Ques, currQues, data);
 
-  useEffect(() => { getQuest() }, [])
-  useEffect(() => { Ques.length && !currQues.length && handleReLoad() }, [Ques, currQues])
-
-  const getQuest = () => {
-    console.log("start to get");
-    if (localStorage.questions)
-      setQues(JSON.parse(localStorage.questions))
-    else {
-      console.log("else");
-      setQues(data)
-      localStorage.questions = JSON.stringify(data)
-    }
-  }
+  useEffect(() => {
+    Ques.length &&
+    !currQues.length &&
+    handleReLoad()
+  }, [Ques, currQues])
 
   const handleReLoad = () => setCurrQues(getRandom3(Ques))
 
