@@ -45,6 +45,14 @@ input {
 
 .card {
   width: 300px;
+  gap: .3rem;
+  padding-bottom: 3rem;
+}
+
+.card h2,
+.card input[type=text] {
+  max-width: 90%;
+  overflow-x: hidden;
 }
 
 .card.true {
@@ -66,6 +74,7 @@ input {
 .card label {
   margin-right: 1rem;
   line-height: 1.3;
+  font-size: 1.1rem;
 }
 
 .card input,

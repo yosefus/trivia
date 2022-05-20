@@ -1,11 +1,10 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
-import Game from './pages/Game';
-import CreateQuestion from './pages/CreateQuestion';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import data from './arrData';
 import { getRandom3 } from './functions/functions';
+import Game from './pages/Game';
+import CreateQuestion from './pages/CreateQuestion';
 
 function App() {
   const
@@ -13,12 +12,8 @@ function App() {
     [Ques, setQues] = useState(initialState),
     [currQues, setCurrQues] = useState([])
 
-  console.log(Ques, currQues, data);
-
   useEffect(() => {
-    Ques.length &&
-    !currQues.length &&
-    handleReLoad()
+    Ques.length && !currQues.length && handleReLoad()
   }, [Ques, currQues])
 
   const handleReLoad = () => setCurrQues(getRandom3(Ques))
