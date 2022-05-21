@@ -16,7 +16,10 @@ function App() {
     Ques.length && !currQues.length && handleReLoad()
   }, [Ques, currQues])
 
-  const handleReLoad = () => setCurrQues(getRandom3(Ques))
+  const handleReLoad = () => {
+    setCurrQues(getRandom3(Ques))
+    localStorage.questions = JSON.stringify(Ques)
+  }
 
   return (
     <div className='App' >
