@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 
-export default function CreateQuestion({ setQues }) {
+export default function CreateQuestion({ setQues, Ques }) {
 
    const handleSubmit = (e) => {
       e.preventDefault()
@@ -28,10 +28,11 @@ export default function CreateQuestion({ setQues }) {
    }
 
    return (
-      <div className='d-flex create'>
+      <div className='d-flex main'>
          <Header />
 
          <form onSubmit={handleSubmit} className="glass form">
+            <p>there is {Ques && Ques.length} questions in the system</p>
             <h2>create a new question</h2>
             <input required type="text" name='ques' placeholder='name of the question...' />
             {Array.from(Array(4)).map((X, i) =>

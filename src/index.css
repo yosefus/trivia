@@ -31,16 +31,26 @@ input {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
-  padding: 6rem 1rem;
+  padding: 2rem 1rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* gap: 1rem; */
 }
 
 .main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 2rem;
-  min-height: 60vh;
+  min-height: 0vh;
+}
+
+.cardContainer {
+  gap: 1rem;
+  min-height: 70vh;
 }
 
 .card {
@@ -119,12 +129,8 @@ input {
   flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
-  margin-top: 1rem;
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 10;
+  width: 100%;
 }
 
 .header button {
@@ -174,6 +180,10 @@ input {
   gap: 1rem;
 }
 
+.form:hover {
+  transform: scale(1.01);
+}
+
 .form h2 {
   margin-bottom: 2rem;
 }
@@ -201,15 +211,17 @@ input {
 }
 
 .form button[type=submit] {
-  padding: .3rem .6rem;
+  padding: .4rem .6rem;
   border: none;
   border-radius: 5px;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   background: rgba(255, 255, 255, 0.24);
   transition: all ease-in-out .2s;
   width: 200px;
   margin: auto;
   margin-top: 1rem;
+  background: #262626;
+  color: #fff;
 }
 
 .entrence {
@@ -218,10 +230,7 @@ input {
 }
 
 .footer {
-  position: fixed !important;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin-top: 1rem;
   height: 10px;
   min-height: 10px;
 }

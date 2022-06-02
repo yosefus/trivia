@@ -22,13 +22,16 @@ function App() {
   }
 
   return (
-    <div className='App' >
-      <Routes>
-        <Route path='/' element={<Game currQues={currQues} setCurrQues={setCurrQues} />} />
-        <Route path='/create' element={<CreateQuestion setQues={setQues} />} />
-      </Routes>
-      <Footer />
-    </div>
+    <>
+      <div className='App' >
+        <Routes>
+          <Route path='/' element={<Game currQues={currQues} setCurrQues={setCurrQues} />} />
+          <Route path='/create' element={<CreateQuestion setQues={setQues} Ques={Ques} />} />
+        </Routes>
+        <div style={{ flex: 1 }} />
+        <Footer />
+      </div>
+    </>
   );
 }
 

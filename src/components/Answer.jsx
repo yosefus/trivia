@@ -1,11 +1,15 @@
 import React from 'react'
 
+
 export default function Answer({ a, disable, right, ques, setChoice }) {
+   const
+      isDisable = disable.includes(a.index),
+      disStyle = { textDecoration: "line-through", color: "#0303038d" }
    return (
       <span >
-         <label>{a.text}</label>
+         <label style={isDisable ? disStyle : {}}>{a.text}</label>
          <input
-            disabled={disable.includes(a.index) || right !== undefined}
+            disabled={isDisable || right !== undefined}
             type={"radio"}
             name={ques.name}
             onChange={() => setChoice(a.index)}
